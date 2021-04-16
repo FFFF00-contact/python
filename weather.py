@@ -27,7 +27,8 @@ def dtbs1():
 	headers={
 	"Host": "openweathermap.org",
 	"Connection": "keep-alive",
-	"Accept": r"application/json, text/plain, */*",
+	"Accept": r"application/json, text/plain, */*"
+,
 	"User-Agent": "Mozilla/5.0 (Linux; Android 10; Redmi Note 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Mobile Safari/537.36",
 	"Sec-Fetch-Site": "same-origin",
 	"Sec-Fetch-Mode": "cors",
@@ -45,11 +46,11 @@ def xu_li1(response1):
 		feel_like=response1.json()["daily"][i]["feels_like"]["day"]
 		night=response1.json()["daily"][i]["feels_like"]["night"]
 		eve=response1.json()["daily"][i]["feels_like"]["eve"]
-		morn=response1.json()["daily"][0]["feels_like"]["morn"]
+		morn=response1.json()["daily"][i]["feels_like"]["morn"]
 		ap_suat=response1.json()["daily"][i]["pressure"]
 		do_am=response1.json()["daily"][i]["humidity"]
 		dew_point=response1.json()["daily"][i]["dew_point"]
-		wind_speed=response1.json()["daily"][0]["wind_speed"]
+		wind_speed=response1.json()["daily"][i]["wind_speed"]
 		wind_deg=response1.json()["daily"][i]["wind_deg"]
 		wind_gust=response1.json()["daily"][i]["wind_gust"]
 		print(Fore.GREEN+"="*20)
